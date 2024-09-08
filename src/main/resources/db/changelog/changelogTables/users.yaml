@@ -25,3 +25,8 @@ databaseChangeLog:
                   type: varchar(24)
                   constraints:
                     nullable: false
+              - column:
+                  name: passport_code
+                  type: varchar(4)
+                  constraints:
+                    nullable: false

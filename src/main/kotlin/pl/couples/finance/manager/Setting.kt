@@ -1,6 +1,6 @@
 package pl.couples.finance.manager
 
-data class Settings(
+data class Setting(
   val id: Long,
   val userId: Long,
   val baseAirport: String,

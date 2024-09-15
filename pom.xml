@@ -163,7 +163,7 @@
 								</property>
 								<property>
 									<key>database.liquibaseSchemaName</key>
-									<value>spring.liquibase</value>
+									<value>weekend_trip_advisor</value>
 								</property>
 								<!-- The property "changeLogParameters.contexts" will be passed on to the
                      liquibase.database.Database.update() call (jOOQ 3.13.2+).

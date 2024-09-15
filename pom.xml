@@ -148,6 +148,12 @@
 				</executions>
 
 				<configuration>
+					<jdbc>
+						<driver>com.mysql.cj.jdbc.Driver</driver>
+						<url>jdbc:mysql://${dbUrl}</url>
+						<user>${dbUser}</user>
+						<password>${dbPassword}</password>
+					</jdbc>
 					<generator>
 						<database>
 							<name>org.jooq.meta.extensions.liquibase.LiquibaseDatabase</name>

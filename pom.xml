@@ -152,24 +152,19 @@
 						<database>
 							<name>org.jooq.meta.extensions.liquibase.LiquibaseDatabase</name>
 							<properties>
-
 								<!-- Specify the classpath location of your XML, YAML, or JSON script. -->
 								<property>
 									<key>scripts</key>
-									<value>./src/main/resources/db.changelog/db.changelog-master.yaml</value>
+									<value>./src/main/resources/db/changelog/db.changelog-master.yaml</value>
 								</property>
 								<property>
 									<key>includeLiquibaseTables</key>
 									<value>false</value>
 								</property>
-
-								<!-- Properties prefixed "database." will be passed on to the liquibase.database.Database class
-                     if a matching setter is found -->
 								<property>
 									<key>database.liquibaseSchemaName</key>
-									<value>lb</value>
+									<value>spring.liquibase</value>
 								</property>
-
 								<!-- The property "changeLogParameters.contexts" will be passed on to the
                      liquibase.database.Database.update() call (jOOQ 3.13.2+).
                      See https://www.liquibase.org/documentation/contexts.html -->

@@ -129,7 +129,7 @@
 				<artifactId>liquibase-maven-plugin</artifactId>
 				<configuration>
 					<propertyFile>
-						src/main/resources/liquibase.yml
+						src/main/resources/application.properties
 					</propertyFile>
 				</configuration>
 			</plugin>

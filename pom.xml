@@ -58,6 +58,11 @@
 			<groupId>org.liquibase</groupId>
 			<artifactId>liquibase-core</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>org.jooq</groupId>
+			<artifactId>jooq-meta-extensions-liquibase</artifactId>
+<!--			<version>3.19.11</version>-->
+		</dependency>
 
 		<dependency>
 			<groupId>com.github.jasync-sql</groupId>
@@ -126,6 +131,55 @@
 					<propertyFile>
 						src/main/resources/liquibase.yml
 					</propertyFile>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.jooq</groupId>
+				<artifactId>jooq-codegen-maven</artifactId>
+
+				<!-- The jOOQ code generation plugin is also executed in the generate-sources phase, prior to compilation -->
+				<executions>
+					<execution>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+					</execution>
+				</executions>
+
+				<configuration>
+					<generator>
+						<database>
+							<name>org.jooq.meta.extensions.liquibase.LiquibaseDatabase</name>
+							<properties>
+
+								<!-- Specify the classpath location of your XML, YAML, or JSON script. -->
+								<property>
+									<key>scripts</key>
+									<value>./src/main/resources/db.changelog/changelogTables/</value>
+								</property>
+								<property>
+									<key>includeLiquibaseTables</key>
+									<value>false</value>
+								</property>
+
+								<!-- Properties prefixed "database." will be passed on to the liquibase.database.Database class
+                     if a matching setter is found -->
+								<property>
+									<key>database.liquibaseSchemaName</key>
+									<value>lb</value>
+								</property>
+
+								<!-- The property "changeLogParameters.contexts" will be passed on to the
+                     liquibase.database.Database.update() call (jOOQ 3.13.2+).
+                     See https://www.liquibase.org/documentation/contexts.html -->
+								<property>
+									<key>changeLogParameters.contexts</key>
+									<value>!test</value>
+								</property>
+							</properties>
+						</database>
+					</generator>
 				</configuration>
 			</plugin>
 		</plugins>

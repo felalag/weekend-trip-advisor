@@ -1,4 +1,4 @@
-package pl.couples.finance.manager
+package pl.weekend.trip.advisor
 
 import org.springframework.stereotype.Component
 import org.springframework.web.reactive.function.server.ServerRequest

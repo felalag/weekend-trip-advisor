@@ -1,4 +1,4 @@
-package pl.couples.finance.manager
+package pl.weekend.trip.advisor
 
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration

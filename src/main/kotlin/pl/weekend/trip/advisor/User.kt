@@ -1,4 +1,4 @@
-package pl.couples.finance.manager
+package pl.weekend.trip.advisor
 
 data class User(
   val id: Long,

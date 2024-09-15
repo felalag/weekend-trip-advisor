@@ -1,4 +1,4 @@
-package pl.couples.finance.manager
+package pl.weekend.trip.advisor
 
 import org.jooq.DSLContext
 import org.springframework.stereotype.Repository

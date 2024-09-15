@@ -136,8 +136,6 @@
 			<plugin>
 				<groupId>org.jooq</groupId>
 				<artifactId>jooq-codegen-maven</artifactId>
-
-				<!-- The jOOQ code generation plugin is also executed in the generate-sources phase, prior to compilation -->
 				<executions>
 					<execution>
 						<phase>generate-sources</phase>
@@ -146,7 +144,6 @@
 						</goals>
 					</execution>
 				</executions>
-
 				<configuration>
 					<jdbc>
 						<driver>com.mysql.cj.jdbc.Driver</driver>

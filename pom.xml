@@ -166,18 +166,24 @@
 									<key>dialect</key>
 									<value>MYSQL</value>
 								</property>
+								<!-- Specify the root path, e.g. a path in your Maven directory layout -->
+								<property>
+									<key>rootPath</key>
+									<value>${project.basedir}/src/main/resources</value>
+								</property>
+								<!-- Specify the relative path location of your XML, YAML, or JSON script. -->
 								<property>
 									<key>scripts</key>
-									<value>/db.changelog-master.yaml</value>
+									<value>db/changelog/db.changelog-master.yaml</value>
 								</property>
+<!--								<property>-->
+<!--									<key>scripts</key>-->
+<!--									<value>/db.changelog-master.yaml</value>-->
+<!--								</property>-->
 								<property>
 									<key>includeLiquibaseTables</key>
 									<value>false</value>
 								</property>
-<!--								<property>-->
-<!--									<key>database.liquibaseSchemaName</key>-->
-<!--									<value>PUBLIC</value>-->
-<!--								</property>-->
 								<!-- The property "changeLogParameters.contexts" will be passed on to the
                      liquibase.database.Database.update() call (jOOQ 3.13.2+).
                      See https://www.liquibase.org/documentation/contexts.html -->

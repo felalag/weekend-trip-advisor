@@ -1,7 +1,7 @@
 databaseChangeLog:
   - preConditions:
       - runningAs:
-          username: liquibase
+          username: datapies
   - changeSet:
       id: 1
       author: felalag

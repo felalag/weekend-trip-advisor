@@ -175,7 +175,7 @@
 								</property>
 								<property>
 									<key>database.liquibaseSchemaName</key>
-									<value>weekend_trip_advisor</value>
+									<value>PUBLIC</value>
 								</property>
 								<!-- The property "changeLogParameters.contexts" will be passed on to the
                      liquibase.database.Database.update() call (jOOQ 3.13.2+).

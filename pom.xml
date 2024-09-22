@@ -166,8 +166,10 @@
 							<inputSchema>weekend_trip_advisor</inputSchema>
 							<properties>
 								<!-- Specify the classpath location of your XML, YAML, or JSON script. -->
-								<key>dialect</key>
-								<value>MYSQL</value>
+								<property>
+									<key>dialect</key>
+									<value>MYSQL</value>
+								</property>
 								<property>
 									<key>scripts</key>
 									<value>src/main/resources/db/changelog/db.changelog-master.yaml</value>

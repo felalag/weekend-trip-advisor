@@ -18,10 +18,6 @@
 		<kotlin.version>1.9.24</kotlin.version>
 	</properties>
 	<dependencies>
-<!--		<dependency>-->
-<!--			<groupId>org.springframework.boot</groupId>-->
-<!--			<artifactId>spring-boot-starter-data-jdbc</artifactId>-->
-<!--		</dependency>-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-r2dbc</artifactId>
@@ -127,14 +123,6 @@
 						<version>8.0.33</version>
 					</dependency>
 				</dependencies>
-				<executions>
-					<execution>
-						<phase>install</phase> <!-- Runs Liquibase during the 'install' phase -->
-						<goals>
-							<goal>update</goal>
-						</goals>
-					</execution>
-				</executions>
 			</plugin>
 			<plugin>
 				<groupId>org.jooq</groupId>

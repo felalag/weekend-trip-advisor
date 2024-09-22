@@ -18,10 +18,10 @@
 		<kotlin.version>1.9.24</kotlin.version>
 	</properties>
 	<dependencies>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-jdbc</artifactId>
-		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>org.springframework.boot</groupId>-->
+<!--			<artifactId>spring-boot-starter-data-jdbc</artifactId>-->
+<!--		</dependency>-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-r2dbc</artifactId>
@@ -61,7 +61,7 @@
 		<dependency>
 			<groupId>org.jooq</groupId>
 			<artifactId>jooq-meta-extensions-liquibase</artifactId>
-			<version>3.19.11</version>
+			<version>3.19.0</version>
 		</dependency>
 		<dependency>
 			<groupId>org.jooq</groupId>
@@ -74,11 +74,11 @@
 			<version>2.2.0</version>
 			<scope>runtime</scope>
 		</dependency>
-		<dependency>
-			<groupId>com.mysql</groupId>
-			<artifactId>mysql-connector-j</artifactId>
-			<scope>runtime</scope>
-		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>com.mysql</groupId>-->
+<!--			<artifactId>mysql-connector-j</artifactId>-->
+<!--			<scope>runtime</scope>-->
+<!--		</dependency>-->
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
@@ -136,6 +136,13 @@
 						src/main/resources/application.properties
 					</propertyFile>
 				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>mysql</groupId>
+						<artifactId>mysql-connector-java</artifactId>
+						<version>8.0.30</version>
+					</dependency>
+				</dependencies>
 			</plugin>
 			<plugin>
 				<groupId>org.jooq</groupId>
@@ -149,12 +156,6 @@
 					</execution>
 				</executions>
 				<configuration>
-<!--					<r2dbc>-->
-<!--						<driver>com.mysql.cj.jdbc.Driver</driver>-->
-<!--						<url>r2dbc:mysql://${dbUrl}/weekend_trip_advisor</url>-->
-<!--						<user>${dbUser}</user>-->
-<!--						<password>${dbPassword}</password>-->
-<!--					</r2dbc>-->
 					<jdbc>
 						<driver>com.mysql.cj.jdbc.Driver</driver>
 						<url>jdbc:mysql://${dbUrl}/weekend_trip_advisor</url>
@@ -189,6 +190,13 @@
 						</database>
 					</generator>
 				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>mysql</groupId>
+						<artifactId>mysql-connector-java</artifactId>
+						<version>8.0.30</version>
+					</dependency>
+				</dependencies>
 			</plugin>
 		</plugins>
 	</build>

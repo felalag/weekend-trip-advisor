@@ -163,7 +163,7 @@
 								<!-- Specify the classpath location of your XML, YAML, or JSON script. -->
 								<property>
 									<key>scripts</key>
-									<value>src/main/resources/db/changelog/db.changelog-master</value>
+									<value>src/main/resources/db/changelog/db.changelog-master.yaml</value>
 								</property>
 								<property>
 									<key>includeLiquibaseTables</key>

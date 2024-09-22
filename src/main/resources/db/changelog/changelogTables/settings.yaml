@@ -8,7 +8,7 @@ databaseChangeLog:
       changes:
         - createTable:
             tableName: settings
-            ifNotExists: true
+#            ifNotExists: true
             columns:
               - column:
                   name: id

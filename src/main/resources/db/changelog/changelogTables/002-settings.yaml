@@ -1,4 +1,7 @@
 databaseChangeLog:
+  - preConditions:
+      - dbms:
+          type: mysql
   - changeSet:
       id: 1
       author: felalag

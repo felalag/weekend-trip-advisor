@@ -125,6 +125,14 @@
 						src/main/resources/application.properties
 					</propertyFile>
 				</configuration>
+				<executions>
+					<execution>
+						<phase>install</phase> <!-- Runs Liquibase during the 'install' phase -->
+						<goals>
+							<goal>update</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 			<plugin>
 				<groupId>org.jooq</groupId>

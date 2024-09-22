@@ -155,8 +155,9 @@
 						<password>${dbPassword}</password>
 					</jdbc>
 					<generator>
+						<name>org.jooq.meta.extensions.liquibase.LiquibaseDatabase</name>
 						<database>
-							<name>org.jooq.meta.extensions.liquibase.LiquibaseDatabase</name>
+							<name>org.jooq.meta.mysql.MySQLDatabase</name>
 							<properties>
 								<!-- Specify the classpath location of your XML, YAML, or JSON script. -->
 								<property>

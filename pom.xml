@@ -18,10 +18,10 @@
 		<kotlin.version>1.9.24</kotlin.version>
 	</properties>
 	<dependencies>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-jdbc</artifactId>
-		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>org.springframework.boot</groupId>-->
+<!--			<artifactId>spring-boot-starter-data-jdbc</artifactId>-->
+<!--		</dependency>-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-r2dbc</artifactId>
@@ -155,9 +155,8 @@
 						<password>${dbPassword}</password>
 					</jdbc>
 					<generator>
-						<name>org.jooq.meta.extensions.liquibase.LiquibaseDatabase</name>
 						<database>
-							<name>org.jooq.meta.mysql.MySQLDatabase</name>
+							<name>org.jooq.meta.extensions.liquibase.LiquibaseDatabase</name>
 							<properties>
 								<!-- Specify the classpath location of your XML, YAML, or JSON script. -->
 								<property>

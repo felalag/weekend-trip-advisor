@@ -187,6 +187,10 @@
 									<key>changeLogParameters.contexts</key>
 									<value>!test</value>
 								</property>
+								<property>
+									<key>logExecutedQueries</key>
+									<value>true</value>
+								</property>
 							</properties>
 						</database>
 					</generator>

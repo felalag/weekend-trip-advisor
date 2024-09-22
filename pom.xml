@@ -112,9 +112,14 @@
 				<groupId>org.liquibase</groupId>
 				<artifactId>liquibase-maven-plugin</artifactId>
 				<configuration>
-					<propertyFile>
-						src/main/resources/application.properties
-					</propertyFile>
+					<driver>com.mysql.cj.jdbc.Driver</driver>
+					<url>jdbc:mysql://${dbUrl}/weekend_trip_advisor</url>
+					<username>${dbUser}</username>
+					<password>${dbPassword}</password>
+					<changeLogFile>src/main/resources/db/changelog/db.changelog-master.yaml</changeLogFile>
+<!--					<propertyFile>-->
+<!--						src/main/resources/application.properties-->
+<!--					</propertyFile>-->
 				</configuration>
 				<dependencies>
 					<dependency>

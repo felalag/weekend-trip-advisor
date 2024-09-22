@@ -1,5 +1,5 @@
 databaseChangeLog:
   - includeAll:
       path: ./changelogTables
-  - includeAll:
-      path: ./changelogIndexes
+#  - includeAll:
+#      path: ./changelogIndexes

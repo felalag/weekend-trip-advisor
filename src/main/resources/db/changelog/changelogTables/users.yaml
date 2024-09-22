@@ -1,14 +1,15 @@
 databaseChangeLog:
-  - preConditions:
-      - runningAs:
-          username: datapies
   - changeSet:
       id: 1
       author: felalag
+      preConditions:
+        - onFail: WARN
+        - not:
+            - tableExists:
+                tableName: users
       changes:
         - createTable:
             tableName: users
-#            ifNotExists: true
             columns:
               - column:
                   name: id

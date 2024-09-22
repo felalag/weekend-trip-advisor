@@ -116,7 +116,7 @@
 					<url>jdbc:mysql://${dbUrl}/weekend_trip_advisor</url>
 					<username>${dbUser}</username>
 					<password>${dbPassword}</password>
-					<changeLogFile>src/main/resources/db/changelog/db.changelog-master.yaml</changeLogFile>
+					<changeLogFile>${project.basedir}/src/main/resources/db/changelog/db.changelog-master.yaml</changeLogFile>
 <!--					<propertyFile>-->
 <!--						src/main/resources/application.properties-->
 <!--					</propertyFile>-->

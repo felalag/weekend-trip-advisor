@@ -23,11 +23,6 @@
 			<artifactId>spring-boot-starter-data-jdbc</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<version>8.0.30</version>
-		</dependency>
-		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-r2dbc</artifactId>
 		</dependency>
@@ -125,6 +120,13 @@
 						src/main/resources/application.properties
 					</propertyFile>
 				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>mysql</groupId>
+						<artifactId>mysql-connector-java</artifactId>
+						<version>8.0.33</version>
+					</dependency>
+				</dependencies>
 				<executions>
 					<execution>
 						<phase>install</phase> <!-- Runs Liquibase during the 'install' phase -->

@@ -159,7 +159,6 @@
 					<generator>
 						<database>
 							<name>org.jooq.meta.extensions.liquibase.LiquibaseDatabase</name>
-							<inputSchema>weekend_trip_advisor</inputSchema>
 							<properties>
 								<!-- Specify the classpath location of your XML, YAML, or JSON script. -->
 								<property>

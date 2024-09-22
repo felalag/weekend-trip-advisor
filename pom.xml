@@ -163,8 +163,11 @@
 						</strategy>
 						<database>
 							<name>org.jooq.meta.extensions.liquibase.LiquibaseDatabase</name>
+							<inputSchema>weekend_trip_advisor</inputSchema>
 							<properties>
 								<!-- Specify the classpath location of your XML, YAML, or JSON script. -->
+								<key>dialect</key>
+								<value>MYSQL</value>
 								<property>
 									<key>scripts</key>
 									<value>src/main/resources/db/changelog/db.changelog-master.yaml</value>
@@ -173,10 +176,10 @@
 									<key>includeLiquibaseTables</key>
 									<value>false</value>
 								</property>
-								<property>
-									<key>database.liquibaseSchemaName</key>
-									<value>PUBLIC</value>
-								</property>
+<!--								<property>-->
+<!--									<key>database.liquibaseSchemaName</key>-->
+<!--									<value>PUBLIC</value>-->
+<!--								</property>-->
 								<!-- The property "changeLogParameters.contexts" will be passed on to the
                      liquibase.database.Database.update() call (jOOQ 3.13.2+).
                      See https://www.liquibase.org/documentation/contexts.html -->

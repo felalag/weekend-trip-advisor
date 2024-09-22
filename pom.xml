@@ -141,7 +141,6 @@
 			<plugin>
 				<groupId>org.jooq</groupId>
 				<artifactId>jooq-codegen-maven</artifactId>
-				<version>3.19.7</version>
 				<executions>
 					<execution>
 						<phase>generate-sources</phase>
@@ -193,6 +192,7 @@
 					<dependency>
 						<groupId>org.jooq</groupId>
 						<artifactId>jooq-meta-extensions-liquibase</artifactId>
+						<version>3.19.7</version>
 					</dependency>
 					<dependency>
 						<groupId>mysql</groupId>

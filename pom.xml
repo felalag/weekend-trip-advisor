@@ -157,10 +157,6 @@
 						<password>${dbPassword}</password>
 					</jdbc>
 					<generator>
-						<name>org.jooq.codegen.DefaultGenerator</name>
-						<strategy>
-							<name>org.jooq.codegen.DefaultGeneratorStrategy</name>
-						</strategy>
 						<database>
 							<name>org.jooq.meta.extensions.liquibase.LiquibaseDatabase</name>
 							<inputSchema>weekend_trip_advisor</inputSchema>
@@ -172,7 +168,7 @@
 								</property>
 								<property>
 									<key>scripts</key>
-									<value>src/main/resources/db/changelog/db.changelog-master.yaml</value>
+									<value>${project.basedir}/src/main/resources/db/changelog/db.changelog-master.yaml</value>
 								</property>
 								<property>
 									<key>includeLiquibaseTables</key>

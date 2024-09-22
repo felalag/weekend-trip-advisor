@@ -18,15 +18,10 @@
 		<kotlin.version>1.9.24</kotlin.version>
 	</properties>
 	<dependencies>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-jdbc</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<version>8.0.33</version> <!-- Make sure to use the correct version -->
-		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>org.springframework.boot</groupId>-->
+<!--			<artifactId>spring-boot-starter-data-jdbc</artifactId>-->
+<!--		</dependency>-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-r2dbc</artifactId>
@@ -121,9 +116,14 @@
 				<groupId>org.liquibase</groupId>
 				<artifactId>liquibase-maven-plugin</artifactId>
 				<configuration>
-					<propertyFile>
-						src/main/resources/application.properties
-					</propertyFile>
+					<driver>com.mysql.cj.jdbc.Driver</driver>
+					<url>jdbc:mysql://${dbUrl}/weekend_trip_advisor</url>
+					<username>${dbUser}</username>
+					<password>${dbPassword}</password>
+					<changeLogFile>src/main/resources/db/changelog/db.changelog-master.yaml</changeLogFile>
+<!--					<propertyFile>-->
+<!--						src/main/resources/application.properties-->
+<!--					</propertyFile>-->
 				</configuration>
 			</plugin>
 			<plugin>

@@ -60,11 +60,6 @@
 		</dependency>
 		<dependency>
 			<groupId>org.jooq</groupId>
-			<artifactId>jooq-meta-extensions-liquibase</artifactId>
-			<version>3.19.0</version>
-		</dependency>
-		<dependency>
-			<groupId>org.jooq</groupId>
 			<artifactId>jooq-kotlin</artifactId>
 			<version>3.19.0</version>
 		</dependency>
@@ -196,6 +191,11 @@
 					</generator>
 				</configuration>
 				<dependencies>
+					<dependency>
+						<groupId>org.jooq</groupId>
+						<artifactId>jooq-meta-extensions-liquibase</artifactId>
+						<version>3.19.0</version>
+					</dependency>
 					<dependency>
 						<groupId>mysql</groupId>
 						<artifactId>mysql-connector-java</artifactId>

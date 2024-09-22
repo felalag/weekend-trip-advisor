@@ -157,6 +157,10 @@
 						<password>${dbPassword}</password>
 					</jdbc>
 					<generator>
+						<name>org.jooq.codegen.DefaultGenerator</name>
+						<strategy>
+							<name>org.jooq.codegen.DefaultGeneratorStrategy</name>
+						</strategy>
 						<database>
 							<name>org.jooq.meta.extensions.liquibase.LiquibaseDatabase</name>
 							<properties>

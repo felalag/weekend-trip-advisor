@@ -1,6 +1,6 @@
 databaseChangeLog:
   - include:
-      file: db/changelog/changelogTables/001-users.yaml
+      file: src/main/resources/db/changelog/changelogTables/001-users.yaml
   - include:
       file: db/changelog/changelogTables/002-settings.yaml
 #  - includeAll:

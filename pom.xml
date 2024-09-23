@@ -117,8 +117,7 @@
 <!--					<username>${dbUser}</username>-->
 <!--					<password>${dbPassword}</password>-->
 <!--					<changeLogFile>src/main/resources/db/changelog/db.changelog-master.yaml</changeLogFile>-->
-					<propertyFile>application.properties</propertyFile>
-					<searchPath>src/main/resources</searchPath>
+					<propertyFile>src/main/resources/liquibase.properties</propertyFile>
 				</configuration>
 				<dependencies>
 					<dependency>

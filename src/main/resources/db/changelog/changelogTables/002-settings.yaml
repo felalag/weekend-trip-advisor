@@ -1,0 +1,57 @@
+databaseChangeLog:
+  - preConditions:
+      - dbms:
+          type: mysql,h2
+  - changeSet:
+      id: 1
+      author: felalag
+      preConditions:
+        - onFail: WARN
+        - not:
+            - tableExists:
+                tableName: settings
+      changes:
+        - createTable:
+            tableName: settings
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: pk_settings
+                    nullable: false
+              - column:
+                  name: user_id
+                  type: bigint
+                  constraints:
+                    referencedTableName: users
+                    referencedColumnNames: id
+                    foreignKeyName: fk_settings_user_id
+                    nullable: false
+              - column:
+                  name: base_airport
+                  type: varchar(5)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: flight_price_max
+                  type: bigint
+                  constraints:
+                    nullable: false
+              - column:
+                  name: departure_date_in_days_min
+                  type: int
+                  constraints:
+                    nullable: false
+              - column:
+                  name: trip_length_in_days_min
+                  type: int
+                  constraints:
+                    nullable: false
+              - column:
+                  name: trip_length_in_days_max
+                  type: int
+                  constraints:
+                    nullable: false

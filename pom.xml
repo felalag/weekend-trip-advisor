@@ -20,10 +20,6 @@
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-jdbc</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-r2dbc</artifactId>
 		</dependency>
 		<dependency>
@@ -58,22 +54,15 @@
 			<groupId>org.liquibase</groupId>
 			<artifactId>liquibase-core</artifactId>
 		</dependency>
-
+		<dependency>
+			<groupId>org.jooq</groupId>
+			<artifactId>jooq-kotlin</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>com.github.jasync-sql</groupId>
 			<artifactId>jasync-mysql</artifactId>
 			<version>2.2.0</version>
 			<scope>runtime</scope>
-		</dependency>
-		<dependency>
-			<groupId>com.mysql</groupId>
-			<artifactId>mysql-connector-j</artifactId>
-			<scope>runtime</scope>
-		</dependency>
-		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<version>8.0.30</version>
 		</dependency>
 		<dependency>
 			<groupId>io.asyncer</groupId>
@@ -116,6 +105,88 @@
 						<groupId>org.jetbrains.kotlin</groupId>
 						<artifactId>kotlin-maven-allopen</artifactId>
 						<version>${kotlin.version}</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+			<plugin>
+				<groupId>org.liquibase</groupId>
+				<artifactId>liquibase-maven-plugin</artifactId>
+				<configuration>
+<!--					<driver>com.mysql.cj.jdbc.Driver</driver>-->
+<!--					<url>jdbc:mysql://${dbUrl}/weekend_trip_advisor</url>-->
+<!--					<username>${dbUser}</username>-->
+<!--					<password>${dbPassword}</password>-->
+<!--					<changeLogFile>src/main/resources/db/changelog/db.changelog-master.yaml</changeLogFile>-->
+					<propertyFile>src/main/resources/application.properties</propertyFile>
+				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>mysql</groupId>
+						<artifactId>mysql-connector-java</artifactId>
+						<version>8.0.33</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+			<plugin>
+				<groupId>org.jooq</groupId>
+				<artifactId>jooq-codegen-maven</artifactId>
+				<executions>
+					<execution>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<generator>
+						<database>
+							<name>org.jooq.meta.extensions.liquibase.LiquibaseDatabase</name>
+							<properties>
+								<!-- Specify the classpath location of your XML, YAML, or JSON script. -->
+								<property>
+									<key>dialect</key>
+									<value>MYSQL</value>
+								</property>
+								<!-- Specify the root path, e.g. a path in your Maven directory layout -->
+								<property>
+									<key>rootPath</key>
+									<value>${project.basedir}/src/main/resources</value>
+								</property>
+								<!-- Specify the relative path location of your XML, YAML, or JSON script. -->
+								<property>
+									<key>scripts</key>
+									<value>db/changelog/db.changelog-master.yaml</value>
+								</property>
+								<property>
+									<key>includeLiquibaseTables</key>
+									<value>false</value>
+								</property>
+								<!-- The property "changeLogParameters.contexts" will be passed on to the
+                     liquibase.database.Database.update() call (jOOQ 3.13.2+).
+                     See https://www.liquibase.org/documentation/contexts.html -->
+								<property>
+									<key>changeLogParameters.contexts</key>
+									<value>!test</value>
+								</property>
+								<property>
+									<key>logExecutedQueries</key>
+									<value>true</value>
+								</property>
+							</properties>
+						</database>
+					</generator>
+				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>org.jooq</groupId>
+						<artifactId>jooq-meta-extensions-liquibase</artifactId>
+						<version>3.19.11</version>
+					</dependency>
+					<dependency>
+						<groupId>mysql</groupId>
+						<artifactId>mysql-connector-java</artifactId>
+						<version>8.0.33</version> <!-- Make sure to use the correct version -->
 					</dependency>
 				</dependencies>
 			</plugin>

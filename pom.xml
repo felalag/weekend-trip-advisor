@@ -118,7 +118,7 @@
 <!--					<password>${dbPassword}</password>-->
 <!--					<changeLogFile>src/main/resources/db/changelog/db.changelog-master.yaml</changeLogFile>-->
 					<propertyFile>
-						application.properties
+						src/main/resources/application.properties
 					</propertyFile>
 				</configuration>
 				<dependencies>

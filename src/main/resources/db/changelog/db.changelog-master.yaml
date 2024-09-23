@@ -1,7 +1,7 @@
 databaseChangeLog:
   - include:
-      file: src/main/resources/db/changelog/changelogTables/001-users.yaml
+      file: db/changelog/changelogTables/001-users.yaml
   - include:
-      file: src/main/resources/db/changelog/changelogTables/002-settings.yaml
+      file: db/changelog/changelogTables/002-settings.yaml
 #  - includeAll:
 #      path: ./changelogIndexes

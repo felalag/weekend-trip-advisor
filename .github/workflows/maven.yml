@@ -27,6 +27,8 @@ jobs:
         java-version: '21'
         distribution: 'temurin'
         cache: maven
+    - name: Run migrations
+      run: mvn liquibase:update -DdbUrl=${{ secrets.DB_URL }} -DdbUser=${{ secrets.DB_USER }} -DdbPassword=${{ secrets.DB_PASSWORD }}
     - name: Build with Maven
       run: mvn clean install -DdbUrl=${{ secrets.DB_URL }} -DdbUser=${{ secrets.DB_USER }} -DdbPassword=${{ secrets.DB_PASSWORD }}
     - name: Save artifact

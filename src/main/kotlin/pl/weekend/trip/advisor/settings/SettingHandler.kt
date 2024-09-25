@@ -1,4 +1,4 @@
-package pl.weekend.trip.advisor
+package pl.weekend.trip.advisor.settings
 
 import org.springframework.stereotype.Component
 import org.springframework.web.reactive.function.server.ServerRequest

@@ -1,4 +1,4 @@
-package pl.weekend.trip.advisor
+package pl.weekend.trip.advisor.settings
 
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration

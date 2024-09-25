@@ -1,4 +1,4 @@
-package pl.weekend.trip.advisor
+package pl.weekend.trip.advisor.users
 
 data class User(
   val id: Long,

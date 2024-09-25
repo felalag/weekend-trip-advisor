@@ -1,4 +1,4 @@
-package pl.weekend.trip.advisor
+package pl.weekend.trip.advisor.settings
 
 import org.jooq.DSLContext
 import org.springframework.stereotype.Repository

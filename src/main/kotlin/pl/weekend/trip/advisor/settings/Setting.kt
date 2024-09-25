@@ -1,4 +1,4 @@
-package pl.weekend.trip.advisor
+package pl.weekend.trip.advisor.settings
 
 data class Setting(
   val id: Long,

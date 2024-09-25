@@ -140,6 +140,12 @@
 				</executions>
 				<configuration>
 					<generator>
+						<name>org.jooq.codegen.KotlinGenerator</name>
+						<generate>
+							<kotlinNotNullPojoAttributes>true</kotlinNotNullPojoAttributes>
+							<kotlinNotNullRecordAttributes>true</kotlinNotNullRecordAttributes>
+							<kotlinNotNullInterfaceAttributes>true</kotlinNotNullInterfaceAttributes>
+						</generate>
 						<database>
 							<name>org.jooq.meta.extensions.liquibase.LiquibaseDatabase</name>
 							<properties>

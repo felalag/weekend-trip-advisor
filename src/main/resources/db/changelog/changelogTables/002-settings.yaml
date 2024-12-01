@@ -42,16 +42,16 @@ databaseChangeLog:
                     nullable: false
               - column:
                   name: departure_date_in_days_min
-                  type: int
+                  type: smallint
                   constraints:
                     nullable: false
               - column:
                   name: trip_length_in_days_min
-                  type: int
+                  type: smallint
                   constraints:
                     nullable: false
               - column:
                   name: trip_length_in_days_max
-                  type: int
+                  type: smallint
                   constraints:
                     nullable: false

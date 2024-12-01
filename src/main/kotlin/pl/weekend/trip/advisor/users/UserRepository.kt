@@ -2,13 +2,12 @@ package pl.weekend.trip.advisor.users
 
 import org.jooq.DSLContext
 import org.jooq.generated.Tables.USERS
-import org.jooq.generated.tables.records.UsersRecord
 import org.springframework.stereotype.Repository
 
 @Repository
 class UserRepository(private val dslContext: DSLContext) {
 
-  fun getUserById(id: Long): UsersRecord? =
+  fun getUserById(id: Long) =
     dslContext.selectFrom(USERS).where(USERS.ID.eq(id)).fetchOne()
 
   fun createUser(user: User) =
